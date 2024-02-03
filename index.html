@@ -19,6 +19,11 @@
       margin: 0;
       padding: 0;
     }
+    #grad1 {
+        height: 100rem;
+          background-repeat: no-repeat;
+          background-image: linear-gradient( 135deg, #303958 10%, #208072 100%);
+        }
     #video-container {
       width: 100%;
       max-width: 40em;
@@ -52,13 +57,7 @@
     }
   </style>
 </head>
-<body>
-<div class="dropdown">
-<button class="dropbtn">国内卫视直播源</button>
-<div class="dropdown-content">
-<a href="https://github.com/linqingping/M3U8-player/blob/master/sources.m3u8" style="display: inline-block;">其他直播源，可复制播放</a>
-</div>
-</div>
+<body id="grad1">
   <div id="video-container" data-shaka-player-container data-shaka-player-cast-receiver-id="1BA79154">
     <video data-shaka-player id="video"></video>
   </div>

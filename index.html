@@ -135,20 +135,26 @@
         }
       });
 
-	//player.configure({drm:{servers:{'com.widevine.alpha':'https://license.dstv.com/widevine/getLicense?CrmId=afl&AccountId=afl&ContentId=SH2&SessionId=D3C00F885C24B9C6&Ticket=C839A8D71AB94299'}}}); 
+	// player.configure('manifest.dash.ignoreMinBufferTime', true);
+        // player.configure('streaming.rebufferingGoal', 1 /* second */);
+	// player.configure({drm:{servers:{'com.widevine.alpha':'https://license.dstv.com/widevine/getLicense?CrmId=afl&AccountId=afl&ContentId=SH2&SessionId=D3C00F885C24B9C6&Ticket=C839A8D71AB94299'}}}); 
 
       window.player = player;
       window.ui = ui;
 
       player.addEventListener('error', onPlayerErrorEvent);
       controls.addEventListener('error', onUIErrorEvent);
-
+	    
       try {
         await player.load(manifestUri);
         console.log('The video has now been loaded!');
       } catch (error) {
         onPlayerError(error);
       }
+	// player.getNetworkingEngine().registerRequestFilter(function(type, request) {
+        // if (type == shaka.net.NetworkingEngine.RequestType.SEGMENT) {
+        //  request.headers['authorization'] = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ3bXZlciI6Miwid21pZGZtdCI6ImFzY2lpIiwid21pZHR5cCI6MSwid21rZXl2ZXIiOjEsIndtaWRsZW4iOjUxMiwid21pZCI6Ik4yVmpNbUppTWprdE5tRXlaUzAwTXpkakxXSTBORFF0TTJJMFpXUTRPRFl5TURBMCIsIndtb3BpZCI6MzIsImV4cCI6MTcwMjMzMDM5NCwiaWF0IjoxNzAwNzI2Mzk0fQ.lbgSxm9a7TwQEq7OXu-rJy7OmfzYA7diaHUmwuWLe-M';     }
+        //  });
     }
 
     function onPlayerErrorEvent(errorEvent) {

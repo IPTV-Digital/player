@@ -1,277 +1,196 @@
-
-<!DOCTYPE html>
 <html lang="id">
+<html>
 
 <head>
-    <meta name="robots" content="noindex, nofollow" />
-    <meta name="referrer" content="no-referrer" />
-	
-    <style type="text/css">
-        body {
-            margin: 0;
-            padding: 0;
-        }
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+<meta name="referrer" content="same-origin">
+  <title>XYSTV - LIGA DAGELAN BAGIAN 1</title>
+ <link rel="stylesheet" href="https://arjunaaaaa.github.io/lsbtv/gaya.css" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">  
+<script src='https://cdn.jsdelivr.net/gh/Arjunaaaaa/lsbtv/fullscreen.js' crossorigin='anonymous'></script>
+<script src='https://cdn.jsdelivr.net/gh/Arjunaaaaa/lsbtv/aspekrasio.js' crossorigin='anonymous'></script>
+<script src='https://cdn.jsdelivr.net/gh/Arjunaaaaa/lsbtv/popupwindow.js' crossorigin='anonymous'></script>
+<script src='https://cdn.jsdelivr.net/gh/Arjunaaaaa/lsbtv/aspekrasio.js' crossorigin='anonymous'></script>
+<script type="text/javascript" src='script.js'></script>
+<script type="text/javascript" src='https://arjunaaaaa.github.io/nyuri/script/offline-message.js'></script>
+<script src="https://cdn.jsdelivr.net/gh/minozotv/rakettv@master/captos.js"></script>
 
-        #player {
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            z-index: 0;
-            top: 0px;
-            right: 0;
-            left: 0;
-            bottom: 0px;
-        }
-      .konten-atas {
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-.konten-bawah {
-  position: relative;
-}
-      #stretching-button {
-      padding: 3px 3px;
-      margin-right: 3px;
-      background-color: blue;
-      color: white;
-      border: none;
-      border-radius: 3px;
-      cursor: pointer;
-      font-size: 13px;
-    }
-
-    #stretching-button:hover {
-      background-color: black;
-    }
-    </style>
-    <script src="https://ssl.p.jwpcdn.com/player/v/8.27.1/jwpsrv.js"></script>
-    <script src="https://ssl.p.jwpcdn.com/player/v/8.27.1/jwplayer.js"></script>
-    <script src="https://ssl.p.jwpcdn.com/player/v/8.27.1/provider.shaka.js"></script>
-    <script src="https://ssl.p.jwpcdn.com/player/v/8.27.1/polyfills.webvtt.js"></script>
-    <script>
-        jwplayer.key = 'XSuP4qMl+9tK17QNb+4+th2Pm9AWgMO/cYH8CI0HGGr7bdjo';
-    </script>
-   <link rel="stylesheet" href="https://arjunaaaaa.github.io/lsbtv/gaya.css" />
-   <link rel="stylesheet" href="https://reisyah.github.io/player/jwplayer/style.css" />
-
-  
-    <script>
-        
-        function periksaDomain() {
-            var url = window.location.href; 
-            var domainList = ["reisyah.github.io", "arjunaaaaa.github.io", "livebola.repl.co"]; // 
-
-            var domainValid = false;
-
-            
-            for (var i = 0; i < domainList.length; i++) {
-                if (url.indexOf(domainList[i]) !== -1) {
-                    domainValid = true;
-                    break;
-                }
-            }
-
-            
-            if (!domainValid) {
-                window.location.href = "https://linktr.ee/livestreambolatv"; 
-            }
-        }
-    </script>
-
-  
-
-</head>
-
-
-
-<body bgcolor='black' style='margin:0' oncontextmenu='return false' onkeydown='return false' onmousedown='return false' onload="periksaDomain();">
-    <script type="text/javascript">
-        function getParameterByName(name) {
-            name = name.replace(/[\[]/, "\[").replace(/[\]]/, "\]");
-            var regex = new RegExp("[\?&]" + name + "=([^&#]*)"),
-                results = regex.exec(location.search);
-            return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
-        }
-
-        var file = getParameterByName('file');
-        var keyid = getParameterByName('keyid');
-        var key = getParameterByName('key');
-      var widevine = getParameterByName('wv');
-        var getIMG = getParameterByName('img');
-        var getRASIO = getParameterByName('rasio');
-      var gons = getParameterByName('ns');
-    </script>
-
-<div id="player"> </div>
-
-  <!--
-  <div class="konten-atas">
-	<div class="Marquee-box">
-   <marquee class="MyMarquee" id="my_marquee" direction="top" behavior="1" scrollamount="5" onmouseover="this.stop()" onmouseout="this.start()">
-     <div> UNTUK FULL SCREEN SILAHKAN AKTIFKAN ROTASI LAYAR LALU MIRINGLAN HPNYA SESUAI DENGAN ARAH YANG NYAMAN | UNTUK PILIH RESOLUSI SILAHKAN KLIK TOMBOL PENGATURAN/RODA GIR PADA POJOK KANAN BAWAH | KALAU NYALEG EH NGELEG GANTI CHANNEL ATAU REFRESH YA!|   </div></marquee>
- </div>
-
-       
-  </div>
-
-
-  <div class="konten-atas">
+ <script type="text/javascript" src='https://reisyah.github.io/ngopy/function.js'></script>
+	<script type="text/javascript" src='liga_dagelan.js'></script>
  
-    
-   <button id="stretching-button">Ganti Aspek Rasio
-       <button id="stretching-button" onclick="openNewLink()">NS Player</button>
-       
-  </div>
--->
+ 
+ <style>
+ 
+html{scroll-behavior:smooth;height:100%;width:100%;overflow:auto
+font-family:sans-serif;}body,html{height:100%;position:relative;}
+body{margin:0;font-family:Poppins,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";font-size:.94rem;font-weight:400;line-height:1.5;color:#aaa;text-align:left;background-color:#222;}
 
-  
-<div id='fixedban' style='width:100%;margin:auto;text-align:center;float:none;overflow:hidden;display:scroll;position:;bottom:100;z-index:999;-webkit-transform:translateZ(0);'>
-<div>
-<a id='close-fixedban' onclick='document.getElementById("fixedban").style.display = "none";' style='cursor:pointer;'>
-  <img alt='close' src='https://1.bp.blogspot.com/-_A83iDM6JYc/VhtxROLILrI/AAAAAAAADK4/aM4ikIA6aqI/s1600/btn_close.gif' title='close button' style='vertical-align:middle;'/></a>
+	       .center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Ini adalah contoh tinggi penuh layar, sesuaikan dengan kebutuhan Anda */
+	       }
+	   
+ html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
 
-  
-<div style='text-align:center;display:block;max-width:80%;height:auto;overflow:hidden;margin:auto'>
-  <img src='https://1.bp.blogspot.com/-_A83iDM6JYc/VhtxROLILrI/AAAAAAAADK4/aM4ikIA6aqI/s1600/btn_close.gif' style='vertical-align:middle;margin-top:-10px;'/>
-		<center>
-		<fieldset class="btn0">
-  <legend class="btn1" >ASPEK RASIO</legend>
-   <button id="stretching-button">FILL/FIT
-<button id="stretching-button" onclick="openNewLink ()">NS PLAYER
-     <button id="stretching-button" onclick="refreshPage ()">REFRESH!
-   
- </a>
-</fieldset>
-		  
-		</center>
-	</div>
-		</div>
-
-	
+/* Untuk elemen lainnya */
+elemen {
+  height: 100%;
+  width: 100%;
+}
 
 
-  
-    <script type="text/javascript">
-        var player = jwplayer("player");
-
-        player.setup({
-            playlist: [{
-                "image": getIMG,
-                "sources": [{
-                    "default": false,
-                    "type": "application/dash+xml",
-                    //"file": file,
-                    //"drm": {
-                        //"widevine": {
-                            //"url": widevine,
-                  "file": https://cdnjkt4.transvision.co.id:1000/live/master/1/4028c6856c3db2cc016cd6df9359238f/manifest.mpd, 
-             "drm": {
-            "widevine": { 
-		    "url": https://cubmu.topsecret.workers.dev/license-proxy-widevine/cenc/?specConform=true,
-          
-        }
-                    },
-                    "label": "0"
-                }]
-            }],
-            width: "100%",
-            height: "100%",
-            aspectratio: "16:9",
-	    stretching: 'uniform',
-            autostart: true,
-		mute: false,
-            logo: {
-                file:"https://cdn.jsdelivr.net/gh/Arjunaaaaa/lsbtv/logolsbtv.png",
-              link: 'https://linktr.ee/livestreambolatv',
-                position: 'bottom-right',
-
-            
-             },
-		captions: {
-		        color: '#FFF',
-		         fontSize: 15,
-		         backgroundOpacity: 0,
-		         edgeStyle: 'raised' 
-		    },
-          
-            cast: {},
-            //sharing: {}
-        });
-
-      function toggleStretchingMode() {
-    player.setConfig({
-      stretching: player.getConfig().stretching === "uniform" ? "exactfit" : "uniform"
-    });
-  }
-
-  // Tambahkan event listener ke tombol
-  const stretchingButton = document.getElementById("stretching-button");
-  stretchingButton.addEventListener("click", toggleStretchingMode);
-
-
-
-        // Listener untuk memastikan pemutar JW Player telah dimuat sebelum mengaksesnya
-        jwplayer().on('ready', function () {
-            player = jwplayer('player');
-        });
-    </script>
-
-	
-	<script>
-        function openNewLink() {
-            // Replace 'https://www.example.com' with the URL you want to open
-            var newLink = gons;
-            
-            // Open the new link in a new window or tab
-            window.open(newLink, '_blank');
-        }
-  </script>
-	     <script type="text/javascript" src='https://reisyah.github.io/ngopy/function.js'></script>
-  
+/* Untuk elemen lainnya */
+elemen {
+  height: 100%;
+  width: 100%;
+}
+	 
+    </style>
+		<script src='https://Arjunaaaaa.github.io/lsbtv/ua.js' crossorigin='anonymous'>
 		</script>
-
-    <!--direct link-->
-    <script type='text/javascript'>
-        var isCtrl = false;
-        document.onkeyup = function(e) {
-            if (e.which == 17)
-                isCtrl = false;
-        }
-        document.onkeydown = function(e) {
-            if (e.which == 17)
-                isCtrl = true;
-            if ((e.which == 85) || (e.which == 67) && isCtrl == true) {
-                // alert(%8Keyboard shortcuts are cool!%9);
-                return false;
-            }
-        }
-        var isNS = (navigator.appName == "Netscape") ? 1 : 0;
-        if (navigator.appName == "Netscape") document.captureEvents(Event.MOUSEDOWN || Event.MOUSEUP);
-
-        function mischandler() {
-            return false;
-        }
-
-        function mousehandler(e) {
-            var myevent = (isNS) ? e : event;
-            var eventbutton = (isNS) ? myevent.which : myevent.button;
-            if ((eventbutton == 2) || (eventbutton == 3)) return false;
-        }
-        document.oncontextmenu = mischandler;
-        document.onmousedown = mousehandler;
-        document.onmouseup = mousehandler;
-    </script>
-<script type="text/javascript" src="https://reisyah.github.io/ngopy/function.js"></script>
-  
-	     
-	<!--
     <script>
-        if (window == window.top) document.location = "https://paseotv1.blogspot.com/"
+        window.addEventListener('load', function() {
+            var online = navigator.onLine;
+
+            function updateStatus() {
+                var offlineMessage = document.getElementById('offline-message');
+                offlineMessage.style.display = online ? 'none' : 'block';
+            }
+
+            updateStatus();
+
+            window.addEventListener('online', function() {
+                online = true;
+                updateStatus();
+            });
+
+            window.addEventListener('offline', function() {
+                online = false;
+                updateStatus();
+            });
+        });
     </script>
+</head>
+<body>
+    
+</head>
+<body bgcolor='black' style='margin:0' oncontextmenu='return false' onkeydown='return false' onmousedown='return false'>
 
-	       
+<!--
+
+https://api.allorigins.win/raw?url=https://reisyah.github.io/tvsport/sportstar3hd.html
+
+	<div class="center">
+<img src="https://xystv.pages.dev/event_poster.jpg" alt="Deskripsi Gambar" width="100%" height="">
+	</div>
+
+<!--
+-->	
+<div class="fixed" style="top:0px;padding:0px">
+<iframe class="ratio ratio-16x9" id="vidio" width="100%" height="210px" title="Lsbt" scrolling="no" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+	
+
+<!--
+	<div class="Marquee-box">
+   <marquee class="MyMarquee" id="my_marquee" direction="left" behavior="1" scrollamount="6" onmouseover="this.stop()" onmouseout="this.start()">
+     <div> KALAU NYALEG EH NGELEG GANTI CHANNEL YA!| PILIH RESOLUSI PADA CHANNEL *NS) RESOLUSI NAMUN SEBELUM ITU ANDA HARUS MENGINSTAL APLIKASI NS PLAYER SEBAGAI PEMUTAR CHNNELNYA, KALAU MALES INSTAL APK YA PILIH AJA TUH SERVER YANG DISEDIAKAN ! ANDA TUH DAH GEDE, MASA MAU DIAJARIN TERUS SIH</div>
+   </marquee>
+ </div>
+ -->
+  <div id="offline-message">
+    <h2>OM MAU NGAPAIN OM?</h2>
+    <p>Harap periksa koneksi internet Anda dan coba lagi. Lain Kali Jangan Gitu Ya! Dosa Tau Nyuri Mulu, Langsung Ke Sumbernya Lah Masa Mau Nyuri Disini🗿</p>
+  </div>
+	
+    
+<div class="tab-content channels scrollbar-outer list" style="height:460px;padding-bottom:0px;" id="pills-tabContent">
+  
+<div class="tab-pane fade show active" id="pills-events" role="tabpanel" aria-labelledby="pills-info-tab" tabindex="0">
+
+<div class="row" style="padding:0px;margin-top:0px;margin-bottom:0px">
+
+<div class="col-12" style="padding:0px;"> 
+<div class="card game-itme border-1 list-levels " style="margin:0px;padding:0px;border-radius:0px;border: 1px solid #000">
+<div class="w-100 time-is-captitle" style="text-align:center;padding:0px;margin-left:0" onclick="refreshPage()" ><font style="font-size:11px;font-weight:600;color:#fff">
+REFRESH
+</font></div></a></div>
+
+</div>
+ 
+
+ <!--
+<div class="col-6" style="padding:0px;"> 
+<div class="card game-itme border-1 list-levels " style="margin:0px;padding:0px;border-radius:0px;border: 1px solid #000">
+<div class="w-100 time-is-captitle" style="text-align:center;padding:0px;margin-left:0" onclick="ss3new ()" ><font style="font-size:11px;font-weight:600;color:#fff">
+13.00 PERSEWAR X GRESIK </font></div></a></div></div>
+
+
 	-->
-</body>
+<div class="col-6" style="padding:0px;"> 
+<div class="card game-itme border-1 list-levels " style="margin:0px;padding:0px;border-radius:0px;border: 1px solid #000">
+<div class="w-100 time-is-captitle" style="text-align:center;padding:0px;margin-left:0" onclick="nsindosiar ()" ><font style="font-size:11px;font-weight:600;color:#fff">
+NS) INDSIAR </font></div></a></div></div>
+ 
+<div class="col-6" style="padding:0px;"> 
+<div class="card game-itme border-1 list-levels " style="margin:0px;padding:0px;border-radius:0px;border: 1px solid #000">
+<div class="w-100 time-is-captitle" style="text-align:center;padding:0px;margin-left:0" onclick="ss3sd ()" ><font style="font-size:11px;font-weight:600;color:#fff">
+ IMDOSIAR FHD </font></div></a></div></div>
+ <!--
+<div class="col-6" style="padding:0px;"> 
+<div class="card game-itme border-1 list-levels " style="margin:0px;padding:0px;border-radius:0px;border: 1px solid #000">
+<div class="w-100 time-is-captitle" style="text-align:center;padding:0px;margin-left:0" onclick="ss4new ()" ><font style="font-size:11px;font-weight:600;color:#fff">
+SPORTSTAR4 SD</font></div></a></div></div>
+-->
+<div class="col-6" style="padding:0px;"> 
+<div class="card game-itme border-1 list-levels " style="margin:0px;padding:0px;border-radius:0px;border: 1px solid #000">
+<div class="w-100 time-is-captitle" style="text-align:center;padding:0px;margin-left:0" onclick="xystv1 ()" ><font style="font-size:11px;font-weight:600;color:#fff">
+ MATCH1 HD</font></div></a></div></div>
+ 
+<div class="col-6" style="padding:0px;"> 
+<div class="card game-itme border-1 list-levels " style="margin:0px;padding:0px;border-radius:0px;border: 1px solid #000">
+<div class="w-100 time-is-captitle" style="text-align:center;padding:0px;margin-left:0" onclick="xystv2 ()" ><font style="font-size:11px;font-weight:600;color:#fff">
+MATCH2 HD </font></div></a></div></div>
+	
+	<div class="col-6" style="padding:0px;"> 
+<div class="card game-itme border-1 list-levels " style="margin:0px;padding:0px;border-radius:0px;border: 1px solid #000">
+<div class="w-100 time-is-captitle" style="text-align:center;padding:0px;margin-left:0" onclick="play1 ()" ><font style="font-size:11px;font-weight:600;color:#fff">
+ MATCH1 SD</font></div></a></div></div>
+ 
+<div class="col-6" style="padding:0px;"> 
+<div class="card game-itme border-1 list-levels " style="margin:0px;padding:0px;border-radius:0px;border: 1px solid #000">
+<div class="w-100 time-is-captitle" style="text-align:center;padding:0px;margin-left:0" onclick="play2 ()" ><font style="font-size:11px;font-weight:600;color:#fff">
+MATCH2 SD</font></div></a></div></div>
+	
+	<div class="col-6" style="padding:0px;"> 
+<div class="card game-itme border-1 list-levels " style="margin:0px;padding:0px;border-radius:0px;border: 1px solid #000">
+<div class="w-100 time-is-captitle" style="text-align:center;padding:0px;margin-left:0" onclick="livesport1 ()" ><font style="font-size:11px;font-weight:600;color:#fff">
+CHANNEL 1 </font></div></a></div></div>
+ 
+<div class="col-6" style="padding:0px;"> 
+<div class="card game-itme border-1 list-levels " style="margin:0px;padding:0px;border-radius:0px;border: 1px solid #000">
+<div class="w-100 time-is-captitle" style="text-align:center;padding:0px;margin-left:0" onclick="livesport2 ()" ><font style="font-size:11px;font-weight:600;color:#fff">
+ CHANNEL 2 </font></div></a></div></div>
+ <!--
+<div class="col-4" style="padding:0px;"> 
+<div class="card game-itme border-1 list-levels " style="margin:0px;padding:0px;border-radius:0px;border: 1px solid #000">
+<div class="w-100 time-is-captitle" style="text-align:center;padding:0px;margin-left:0" onclick="livesport3 ()" ><font style="font-size:11px;font-weight:600;color:#fff">
+CHANNEL 3</font></div></a></div></div>
 
+  -->
+<div class="" style="margin-top:0px;padding:0px;margin-bottom:0px">
+<iframe src="https://www3.cbox.ws/box/?boxid=3534068&boxtag=DaZc31" width="100%" height="380" allowtransparency="yes" allow="autoplay" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto"></iframe></div>  
+</div>
+	<script type="text/javascript" src='liga_dagelan.js'></script>
+<script type="text/javascript" src='https://reisyah.github.io/ngopy/function.js'></script>
+<script type="text/javascript" src='https://arjunaaaaa.github.io/nyuri/script/offline-message.js'></script>
+
+
+</body>
 </html>

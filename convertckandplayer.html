@@ -3,113 +3,200 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Converter</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Custom CSS -->
+    <title>DRM Web Video Player</title>
+    <link rel="shortcut icon" href="https://upload.wikimedia.org/wikipedia/commons/3/38/VLC_icon.png" />
     <style>
         body {
-            background-color: #f0f2f5;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #000000;
         }
         .container {
-            background: #ffffff;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-            margin-top: 60px;
-            text-align: center;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
+            max-width: 780px;
+            margin: 10px auto;
+            padding: 15px;
+            background-color: #000000;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
         h1 {
-            color: #333;
+            text-align: center;
+            color: #FFF;
+        }
+        form {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #FFF;
+        }
+        label {
+            margin-bottom: 10px;
             font-weight: bold;
-            font-size: 36px;
-            margin-bottom: 40px;
         }
-        .btn-custom {
-            padding: 15px 20px;
-            font-size: 18px;
-            border-radius: 50px;
+        input {
             width: 100%;
-            max-width: 250px;
-            text-transform: uppercase;
-            transition: all 0.3s ease;
-            margin: 10px;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
         }
-        .btn-custom:hover {
-            transform: scale(1.05);
-        }
-        .btn-primary {
-            background-color: #007bff;
-            border: none;
-        }
-        .btn-primary:hover {
-            background-color: #0056b3;
-        }
-        .btn-secondary {
-            background-color: #6c757d;
-            border: none;
-        }
-        .btn-secondary:hover {
-            background-color: #565e64;
-        }
-        .row {
+        .button-group {
             display: flex;
             justify-content: center;
-            flex-wrap: wrap;
+            gap: 10px;
         }
-        .col {
-            flex: 1 1 calc(50% - 20px);
-            margin: 10px;
-            max-width: calc(50% - 20px);
+        button {
+            padding: 12px 20px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
         }
-        @media (max-width: 768px) {
-            .col {
-                flex: 1 1 100%;
-                max-width: 100%;
-            }
+        button:hover {
+            background-color: #45a049;
+        }
+        #player {
+            width: 100%;
+            max-width: 800px;
+            margin: 20px auto;
+        }
+        .default-input {
+            display: none;
+        }
+        @media (max-width: 600px) {
             .container {
-                margin-top: 30px;
-                padding: 20px;
-            }
-            h1 {
-                font-size: 28px;
-                margin-bottom: 30px;
+                padding: 10px;
             }
         }
     </style>
+    <!-- Disable DevTools -->
+    <script disable-devtool-auto src='https://cdn.jsdelivr.net/npm/disable-devtool@latest'></script>
 </head>
 <body>
+<div class="container">
+    <h1>DRM Web Video Player</h1>
 
-    <!-- Main Content -->
-    <div class="container">
-        <h1>Converter Tools</h1>
-        <div class="row">
-            <div class="col">
-                <a href="./base64.html" class="btn btn-primary btn-custom">Hex-Base64</a>
-            </div>
-            <div class="col">
-                <a href="./hex.html" class="btn btn-secondary btn-custom">Base64-Hex</a>
-            </div>
+    <div id="player"></div>
+
+    <form id="videoForm" onsubmit="playVideo(event);">
+        <label for="link">MPD/HLS Link:</label>
+        <input type="text" id="link" name="link" placeholder="Enter MPD or HLS link">
+        <label for="clearKeyKid">Clear Key ID:</label>
+        <input type="text" id="clearKeyKid" name="clearKeyKid" placeholder="Enter Clear Key ID (optional)">
+        <label for="clearKey">Clear Key:</label>
+        <input type="text" id="clearKey" name="clearKey" placeholder="Enter Clear Key (optional)">
+        <label for="widevineLicenseUrl">Widevine License URL:</label>
+        <input type="text" id="widevineLicenseUrl" name="widevineLicenseUrl" placeholder="Enter Widevine License URL (optional)">
+        <div class="default-input">
+            <input type="hidden" id="defaultLink" value="https://cdn.bitmovin.com/content/assets/art-of-motion_drm/mpds/11331.mpd">
+            <input type="hidden" id="defaultClearKeyKid" value="eb676abbcb345e96bbcf616630f1a3da">
+            <input type="hidden" id="defaultClearKey" value="100b6c20940f779a4589152b57d2dacb">
         </div>
-        <div class="row">
-            <div class="col">
-                <a href="./webp.html" class="btn btn-primary btn-custom">Images</a>
-            </div>
-            <div class="col">
-                <a href="./player.html" class="btn btn-secondary btn-custom">Web Player</a>
-            </div>
+        <div class="button-group">
+            <button type="submit">Play Video</button>
+            <button type="button" onclick="toggleFullscreen()">Fullscreen</button>
         </div>
-    </div>
-    
-    <!-- Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    </form>
+</div>
+
+<script src="//ssl.p.jwpcdn.com/player/v/8.25.1/jwplayer.js"></script>
+<script>
+    jwplayer.key = 'XSuP4qMl+9tK17QNb+4+th2Pm9AWgMO/cYH8CI0HGGr7bdjo';
+    var playerInstance;
+
+    function playVideo(event) {
+        event.preventDefault();
+        var link = document.getElementById('link').value;
+        var clearKeyKid = document.getElementById('clearKeyKid').value;
+        var clearKey = document.getElementById('clearKey').value;
+        var widevineLicenseUrl = document.getElementById('widevineLicenseUrl').value;
+
+        if (!link) {
+            alert("Please provide a valid MPD or HLS link.");
+            return;
+        }
+
+        var source = {
+            "file": link,
+            "default": false,
+            "type": "hls"
+        };
+
+        if (link.includes('.mpd')) {
+            source.type = "dash";
+            if (clearKeyKid && clearKey) {
+                source.drm = {
+                    "clearkey": {"keyId": clearKeyKid, "key": clearKey}
+                };
+            }
+            if (widevineLicenseUrl) {
+                source.drm = source.drm || {};
+                source.drm.widevine = {
+                    "url": widevineLicenseUrl
+                };
+            }
+        } else if (link.includes('.m3u8')) {
+            source.type = "hls";
+        } else {
+            alert("Unsupported link format. Please provide a valid MPD or HLS link.");
+            return;
+        }
+
+        playerInstance = jwplayer("player");
+        playerInstance.setup({
+            playlist: [{
+                "sources": [source]
+            }],
+            width: "100%",
+            aspectratio: "16:9",
+            autostart: true
+        });
+    }
+
+    function toggleFullscreen() {
+        if (playerInstance) {
+            playerInstance.setFullscreen(!playerInstance.getFullscreen());
+        }
+    }
+
+    window.onload = function() {
+        var defaultLink = document.getElementById('defaultLink').value;
+        var defaultClearKeyKid = document.getElementById('defaultClearKeyKid').value;
+        var defaultClearKey = document.getElementById('defaultClearKey').value;
+
+        var source = {
+            "file": defaultLink,
+            "default": true,
+            "type": "dash"
+        };
+
+        if (defaultLink.includes('.mpd')) {
+            if (defaultClearKeyKid && defaultClearKey) {
+                source.drm = {
+                    "clearkey": {"keyId": defaultClearKeyKid, "key": defaultClearKey}
+                };
+            }
+        } else if (defaultLink.includes('.m3u8')) {
+            source.type = "hls";
+        } else {
+            console.error("Unsupported default link format.");
+            return;
+        }
+
+        playerInstance = jwplayer("player");
+        playerInstance.setup({
+            playlist: [{
+                "sources": [source]
+            }],
+            width: "100%",
+            aspectratio: "16:9",
+            autostart: true
+        });
+    };
+</script>
 </body>
 </html>

@@ -1,11 +1,11 @@
 # Norepted v1.6.2
-#### YouTube Watcher 
+#### YouTube Watcher & Proxy Hub
 
-Norepted is a YouTube embedder designed to watch Youtube videos where youtube.com is inaccessible, focused on privacy, ease, and convienience. Version 1.6.2 introduces a complete UI overhaul and the highly requested **Links Page,** filled with 200+ links to proxies.
+Norepted is a YouTube embedder and unblocker designed to watch Youtube videos that may be restricted (like at school). Version 1.6.2 introduces a complete UI overhaul and the highly requested **Links Page,** filled with 200+ links to proxies.
 
 ### 🌟 New in v1.6.2
 
-* **🔗 Links Page:** A massive new directory featuring working proxies.
+* **🔗 Links Page:** A massive new directory featuring working proxies and unblockers.
 * **🎨 UI Polish:** Added header icons, updated particle effects, and updated overall theme.
 * **🔖 Save:** Pre-existing launched videos are now saved after exiting the site.
 * **🧹 Optimized Code:** Added "low performance mode" for slower chromebooks, as well as removing unnecessary code.
@@ -13,7 +13,8 @@ Norepted is a YouTube embedder designed to watch Youtube videos where youtube.co
 ## ✨ Key Features
 
 * **🚫 Zero Ads:** Norepted strips all ads from videos for uninterrupted viewing.
-* **🙈 History Hiding:** Redirect to Google to scrub your current session from history (Press "-").
+* **🔓 Bypass Restrictions:** Plays age-restricted and network-blocked videos via `youtube-nocookie` embedding.
+* **🙈 History Hiding (Panic Mode):** Instantly redirect to Google to scrub your current session from history (Press "-").
 * **🎭 Tab Cloaking:** Disguise your tab as "Google Drive" (Press "`").
 * **💾 Save & Bookmark:** Use the "Copy" button on the side panel to save and share direct links to videos.
 * **🖥️ Multi-Video Support:** Open multiple videos at once and resize them individually.
@@ -28,12 +29,11 @@ You can access Norepted through these mirrors:
 | --- | --- |
 | **Vercel** | [norepted-delta.vercel.app](https://norepted-delta.vercel.app/) |
 | **Netlify** | [norepted.netlify.app](https://norepted.netlify.app/) |
-| **Cloudflare** | [https://norepted.norepted.workers.dev/](https://norepted.norepted.workers.dev/) | 
 | **CodeSandbox** | [gzhhqm.csb.app](https://gzhhqm.csb.app) |
 | **Playcode** | [norepted.playcode.io](https://norepted.playcode.io/) (Press "SKIP INTRO") |
 | **Playcode (2)** | [https://2650852.playcode.io/](https://2650852.playcode.io/) (Press "SKIP INTRO") |
 | **GitHub Pages** | [wea-f.github.io/Norepted](http://wea-f.github.io/Norepted) |
-| **CodePen** | [codepen.io/weaF_z/full/RwJVywE](https://codepen.io/weaF_z/full/RwJVywE) |
+| **CodePen** | [codepen.io/weaF_z](https://codepen.io/weaF_z/full/RwJVywE) |
 | **Google Sites** | [sites.google.com/view/n0repted](https://sites.google.com/view/n0repted/home) |
 | **Google Sites (2)** | [https://sites.google.com/view/norepted-mirror/home](https://sites.google.com/view/norepted-mirror/home) |
 | **Edgeone** | [https://norepted.edgeone.app/](https://norepted.edgeone.app/) |
@@ -63,8 +63,6 @@ You can access Norepted through these mirrors:
 ---
 
 ## 🔗 The Links Page (New v1.6.2)
-> ![WARNING]
-> I do not guarantee all the links are safe or are working. I am not responsible for any consequences regarding how you use these websites. Use at your own risk.
 
 * **Bulk Testing:** Select multiple proxy links and open them all at once to find one that works on your network.
 * **Live Updates:** Fetches the latest links directly from GitHub.
